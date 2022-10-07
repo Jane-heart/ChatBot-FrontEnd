@@ -4,6 +4,7 @@ import axios from 'axios'
 // create an axios instance
 const service = axios.create({
 	baseURL: 'http://47.106.69.245:5000', // url = base url + request url
+	// baseURL: 'http://127.0.0.1:5000', // url = base url + request url
 	//withCredentials: true, // send cookies when cross-domain requests 注意：withCredentials和后端配置的cross跨域不可同时使用
 	timeout: 6000, // request timeout
 	crossDomain: true
@@ -24,9 +25,8 @@ service.interceptors.request.use(config => {
  
 //配置成功后的拦截器
 service.interceptors.response.use(res => {
-	console.log('后置处理：'+res.data.code)
-	console.log('后置处理：'+res.data)
-	console.log('后置处理：'+res.data.message)
+	console.log('后置处理：')
+	console.log(res)
 	if (res.data.code == 200) {
 		return res.data
 	} else {

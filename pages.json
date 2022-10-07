@@ -1,18 +1,38 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/login/login"
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app",
+				"enablePullDownRefresh": true,  //设置为true表示当前页面开启下拉刷新
+				"backgroundTextStyle": "dark"  //下拉 loading 的样式，仅支持 dark/light
+			}
+		},
+		{
 			"path": "pages/chat/chat",
 			"style": {
 				"navigationBarTitleText": "we can chat",
 				"enablePullDownRefresh": false
 			}
-
-		},{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
+		},
+		{
+			"path": "pages/friends/friends"
+		},
+		{
+			"path": "pages/me/me"
+		},
+		{
+            "path" : "pages/register/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom", //取消系统导航栏，采用自定义导航栏
@@ -21,5 +41,38 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"tabBar":{//底部导航栏
+		"borderStyle":"black",//边框颜色
+		"backgroundColor":"#F7F7F7",//背景颜色
+		"color":"#000000",//默认颜色
+		"selectedColor":"#07C160",//选中的颜色
+		"list":[
+			{
+				"iconPath":"static/robot.png",
+				"selectedIconPath":"static/me.jpg",
+				"text":"消息",
+				"pagePath":"pages/index/index"
+			},
+			{
+				"iconPath":"static/robot.png",
+				"selectedIconPath":"static/me.jpg",
+				"text":"通讯录",
+				"pagePath":"pages/friends/friends"
+			},
+			// {
+			// 	"iconPath":"static/robot.png",
+			// 	"selectedIconPath":"static/me.jpg",
+			// 	"text":"机器人",
+			// 	"pagePath":"pages/chat/chat"
+			// },
+			{
+				"iconPath":"static/robot.png",
+				"selectedIconPath":"static/me.jpg",
+				"text":"我",
+				"pagePath":"pages/me/me"
+			}
+		]
+	}
+
 }
